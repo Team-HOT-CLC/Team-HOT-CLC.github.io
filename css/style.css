@@ -240,11 +240,13 @@ a {
   a:hover {
     text-decoration: none; }
 
-h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
+h1, h2, h4, h5,
+.h1, .h2, .h4, .h5 {
   color: #000;
   font-family: "Work Sans", sans-serif; }
-
+h3{
+  color: grey;
+}
 .border-2 {
   border-width: 2px; }
 
