@@ -56,5 +56,27 @@
       "email": "tienlinh@gmail.com",
       "id": 6
     }
+  ],
+  "steps":[
+    {
+      "id":1,
+      "stepContent":"Bước 1: Chọn Ảnh Từ Link URL hoặc Trong Máy"
+    },
+    {
+      "id":2,
+      "stepContent":"Bước 2: Điền chữ dòng trên vào ô Chữ Trên"
+    },
+    {
+      "id":3,
+      "stepContent":"Bước 3: Điền chữ dòng dưới vào ô Chữ Dưới"
+    },
+    {
+      "id":4,
+      "stepContent":"Bước 4: Canh chỉnh độ to nhỏ kiểu chữ"
+    },
+    {
+      "id":5,
+      "stepContent":"Bước 5: Bấm vào nút lưu đển lưu ảnh vào máy"
+    }
   ]
 }

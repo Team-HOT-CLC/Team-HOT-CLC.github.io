@@ -128,18 +128,35 @@
   <div class="site-section py-5">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-md-6">
+          <div id = "steps" class="col-md-6">
             <div class="heading-39101 mb-5">
               <span class="backdrop">Meme</span>
               <span class="subtitle-39191">Hướng Dẫn</span>
               <h3>Tạo meme</h3>
             </div>
-            <p>Bước 1: Chọn Ảnh Từ Link URL hoặc Trong Máy</p>
+            
+           <!--  <p>Bước 1: Chọn Ảnh Từ Link URL hoặc Trong Máy</p>
             <p>Bước 2: Điền chữ dòng trên vào ô Chữ Trên</p>
             <p>Bước 3: Điền chữ dòng dưới vào ô Chữ Dưới</p>
             <p>Bước 4: Canh chỉnh độ to nhỏ kiểu chữ</p>
-            <p>Bước 5: Bấm vào nút lưu đển lưu ảnh vào máy</p>
+            <p>Bước 5: Bấm vào nút lưu đển lưu ảnh vào máy</p> -->
           </div>
+
+          <script type="text/javascript">
+          		var urlJsonSteps = 'http://localhost:9081/steps';
+            	var urlMockApiSteps = 'https://5efdebbddd373900160b3a36.mockapi.io/api/steps';
+            	axios.get(urlMockApiSteps).then(function(res){
+            		var getData = res.data;
+              		var getClassSteps = document.getElementById('steps');
+              		var content = getData.map(function(ele){
+              			return "<p>" + ele.stepContent + "</p>"
+              		});
+              		getClassSteps.innerHTML = content.join('');
+            	}).catch(function(err){
+            		console.log(err);
+            	});
+            </script>
+
           <div class="col-md-6" data-aos="fade-right">
             <img src="images/traveler.jpg" alt="Image" class="img-fluid">
           </div>
