@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <div class="site-wrap" id="home-section">
@@ -186,10 +188,36 @@
                 <h2 class="footer-heading mb-4">Phản Hồi</h2>
                 <p>Chúng tôi rất mong nhận được phản hồi từ các bạn.</p>
                 <form action="#" class="d-flex" class="subscribe">
-                  <input type="text" class="form-control mr-3" placeholder="Email">
-                  <input type="submit" value="Send" class="btn btn-primary">
+                  <input id = "emailInsert" type="text" class="form-control mr-3" placeholder="Email">
+                  <input id = "sendBtn" value="Send" class="btn btn-primary">
                 </form>
               </div>
+
+              <script type="text/javascript">
+                var urlJsonEmails = 'http://localhost:9081/emailsPost';
+                var urlMockApiEmails = 'https://5efdebbddd373900160b3a36.mockapi.io/api/emailsPost';
+                var buttonSend = document.getElementById('sendBtn'); 
+                buttonSend.addEventListener('click',addEmail);
+                function addEmail(){
+                  var input = document.getElementById('emailInsert');
+                  var emailValid = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                  if(input.value === ""){
+                    alert('value is blank');
+                  }else{
+                    if(emailValid.test(input.value)){
+                      var newEmail = {
+                      email : input.value
+                      };
+                      axios.post(urlMockApiEmails,newEmail).then(function(item){
+                        alert("Send email : " + input.value + " success!");
+                        input.value = "";
+                      });
+                    }else{
+                      alert('email Invalid!');
+                    }
+                  }
+                }
+              </script>
               
             </div>
           </div>
@@ -199,7 +227,7 @@
             <div class="border-top pt-5">
               <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Meme Generator &copy;<script>document.write(new Date().getFullYear());</script> Team HOT | Deginer by <a href="*" target="_blank" >Thinh-sama</a>  <i class="icon-heart text-danger" aria-hidden="true"></i>
+            Meme Generator &copy;<script>document.write(new Date().getFullYear());</script> Team HOT | Deginer by <a href="*" target="_blank" >Team-Hot-CLC</a>  <i class="icon-heart text-danger" aria-hidden="true"></i>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>
