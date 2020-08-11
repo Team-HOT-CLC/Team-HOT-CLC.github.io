@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Thinh-sama</title>
 </head>
 <body>
 	<div align="center">
